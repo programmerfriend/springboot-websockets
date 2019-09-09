@@ -15,13 +15,22 @@
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
-		<java.version>12</java.version>
+		<java.version>11</java.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webflux</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.twitter4j</groupId>
+			<artifactId>twitter4j-stream</artifactId>
+			<version>4.0.1</version>
 		</dependency>
 
 		<dependency>
