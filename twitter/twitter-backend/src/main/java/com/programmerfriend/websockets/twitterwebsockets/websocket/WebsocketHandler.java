@@ -48,12 +48,12 @@ public class WebsocketHandler extends TextWebSocketHandler implements Applicatio
         log.info("Handling message: {}", message);
     }
 
-    public void sendMessageToAll(String message) {
+    private void sendMessageToAll(String message) {
         TextMessage textMessage = new TextMessage(message);
-        sessions.entrySet().forEach(session -> {
+        sessions.forEach((key, value) -> {
             try {
-                session.getValue().sendMessage(textMessage);
-                log.info("Send message {} to socketId: {}", message, session.getKey());
+                value.sendMessage(textMessage);
+                log.info("Send message {} to socketId: {}", message, key);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -68,6 +68,5 @@ public class WebsocketHandler extends TextWebSocketHandler implements Applicatio
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-
     }
 }

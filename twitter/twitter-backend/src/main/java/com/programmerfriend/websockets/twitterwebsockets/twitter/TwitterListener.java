@@ -23,6 +23,7 @@ public class TwitterListener implements StatusListener {
     public void onException(Exception e) {
     }
 
+    @Override
     public void onStatus(Status status) {
         log.info("Received new Status: {}", status);
         TwitterStatusReceived twitterStatusReceived = new TwitterStatusReceived(this, status);
